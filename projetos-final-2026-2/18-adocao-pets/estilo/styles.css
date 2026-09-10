@@ -7,12 +7,12 @@
 
 /* Variáveis (Custom Properties) — facilitam manter o tema */
 :root {
-  --primary: #f84306;
-  --accent: #943f06;
+  --primary: #db4081;
+  --accent: #fffc52;
   --bg: #fff8f0;
   --text: #1f2937;
   --muted: #6b7280;
-  --card: #ffffff;
+  --card: #0e0101;
   --radius: 14px;
   --shadow: 0 10px 30px rgba(0,0,0,.08);
   --container: 1100px;

@@ -44,7 +44,7 @@ function renderizar() {
   }
   lista.innerHTML = itens.map(i => `
     <article class="item-card">
-      <div class="img">${i.emoji}</div>
+      <div class="img"><img src="${i.foto}" alt="${i.nome}"></div>
       <h3>${i.nome}</h3>
       <p>${i.categoria}</p>
       <p class="preco">${formatarPreco(i.preco)}</p>

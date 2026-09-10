@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adote um Amigo - Adoção de Pets</title>
   <meta name="description" content="Galeria de animais com filtro de espécie/porte." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="estilo/styles.css" />
   <style>
     .filtros { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:30px; }
     .filtro-btn {
@@ -28,7 +28,7 @@
 <body>
   <header class="site-header">
     <div class="nav">
-      <div class="logo">🐱 Adote um Amigo - Adoção de Pets</div>
+      <div class="logo">Adote um Amigo - Adoção de Pets</div>
       <button class="menu-toggle" aria-label="Menu">☰</button>
       <ul id="menu">
         <li><a href="#inicio">Início</a></li>
@@ -57,9 +57,20 @@
 
   <!-- Dados do catálogo embarcados (em projetos reais viria de uma API) -->
   <script>
-    window.ITENS = [{"nome": "Thor", "categoria": "Cão Grande", "preco": "3 anos", "emoji": "🐕"}, {"nome": "Mimi", "categoria": "Gato", "preco": "2 anos", "emoji": "🐈"}, {"nome": "Bidu", "categoria": "Cão Pequeno", "preco": "1 ano", "emoji": "🐶"}, {"nome": "Luna", "categoria": "Gato", "preco": "5 anos", "emoji": "🐈‍⬛"}, {"nome": "Rex", "categoria": "Cão Grande", "preco": "4 anos", "emoji": "🐕‍🦺"}, {"nome": "Pipoca", "categoria": "Cão Pequeno", "preco": "6 meses", "emoji": "🐩"}];
+    window.ITENS = [
+      {"nome": "Thor", "categoria": "Cão Grande", "preco": "3 anos", "foto": "imagens/img1.png"},
+      {"nome": "Mimi", "categoria": "Gato", "preco": "2 anos", "foto": "imagens/img5.png"},
+      {"nome": "Bidu", "categoria": "Cão Pequeno", "preco": "1 ano", "foto": "imagens/img2.png"},
+      {"nome": "Luna", "categoria": "Gato", "preco": "5 anos", "foto": "imagens/img6.png"},
+      {"nome": "Rex", "categoria": "Cão Grande", "preco": "4 anos", "foto": "imagens/img4.png"},
+      {"nome": "Pipoca", "categoria": "Cão Pequeno", "preco": "6 meses", "foto": "imagens/img3.png"},
+      {"nome": "bela", "categoria": "Filhote", "preco": "5 meses", "foto": "imagens/img7.png"},
+      {"nome": "Luna", "categoria": "Cão Pequeno", "preco": "2ano", "foto": "imagens/img8.png"},
+      {"nome": "Dama", "categoria": "Cão Grande", "preco": "1anos", "foto": "imagens/img9.png"},
+      {"nome": "Moranguinho", "categoria": "Gato", "preco": "3 anos", "foto": "imagens/img10.png"},
+    ];
     window.LABEL_PRECO = "Idade:";
-  </script>
-  <script src="script.js"></script>
+</script>
+  <script src="js/script.js"></script>
 </body>
 </html>
