@@ -1,115 +1,121 @@
 <!DOCTYPE html>
-<!--
-  MagluPet - Banho & Tosa
-  Projeto didático do curso de Web Design.
-  Estrutura: header, hero, serviços (cards), sobre, contato (form), footer.
--->
+<!-- Adote um Amigo - Adoção de Pets — Catálogo com filtros (JavaScript) -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <!-- viewport torna o site responsivo no celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MagluPet</title>
-  <meta name="description" content="Para quem quer o melhor cuidado profissional e de alta qualidade para seu pet." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>MAGLU Pet Center - Adoção de Pets</title>
+  <meta name="description" content="Galeria de animais com filtro de espécie/porte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilo/styles.css" />
+  <style>
+    .filtros { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:30px; }
+    .filtro-btn {
+      padding:10px 18px; border:2px solid var(--primary); background:#fff;
+      color:var(--primary); border-radius:999px; cursor:pointer; font-weight:600;
+      transition: all .2s;
+    }
+    .filtro-btn:hover, .filtro-btn.ativo { background:var(--primary); color:#fff; }
+    .catalogo { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .item-card {
+      background:#fff; border-radius:var(--radius); padding:20px;
+      box-shadow:var(--shadow); text-align:center;
+    }
+    .item-card .img { font-size:4rem; margin-bottom:10px; }
+    .item-card .preco { color:var(--primary); font-weight:800; font-size:1.2rem; margin-top:8px; }
+    .vazio { text-align:center; color:var(--muted); padding:40px; }
+  </style>
 </head>
 <body>
-
-  <!-- CABEÇALHO com navegação -->
   <header class="site-header">
     <div class="nav">
-      <div class="logo">🐶 MagluPet</div>
-      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <div class="logo">Adote um Amigo - Adoção de Pets</div>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
       <ul id="menu">
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- HERO: primeira impressão do site -->
   <section class="hero" id="inicio">
-    <h1>MagluPet</h1>
-    <p>Para quem quer o melhor cuidado profissional e de alta qualidade para seu pet.</p>
-    <a href="#contato" class="btn">Agende sua avaliação</a>
-  </section>
+    <svg class="hero-paws" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g fill="var(--primary)" opacity="0.5">
+        <g transform="translate(60,90) scale(0.9) rotate(-12)">
+          <ellipse cx="0" cy="14" rx="13" ry="17"/>
+          <ellipse cx="-16" cy="-8" rx="6" ry="8"/>
+          <ellipse cx="0" cy="-16" rx="6.5" ry="8.5"/>
+          <ellipse cx="16" cy="-8" rx="6" ry="8"/>
+        </g>
+        <g transform="translate(700,460) scale(1.2) rotate(20)">
+          <ellipse cx="0" cy="14" rx="13" ry="17"/>
+          <ellipse cx="-16" cy="-8" rx="6" ry="8"/>
+          <ellipse cx="0" cy="-16" rx="6.5" ry="8.5"/>
+          <ellipse cx="16" cy="-8" rx="6" ry="8"/>
+        </g>
+        <g transform="translate(120,480) scale(0.7) rotate(8)">
+          <ellipse cx="0" cy="14" rx="13" ry="17"/>
+          <ellipse cx="-16" cy="-8" rx="6" ry="8"/>
+          <ellipse cx="0" cy="-16" rx="6.5" ry="8.5"/>
+          <ellipse cx="16" cy="-8" rx="6" ry="8"/>
+        </g>
+      </g>
+    </svg>
 
-  <!-- SERVIÇOS em formato de cards -->
-  <section id="servicos">
-    <div class="container">
-      <h2>Nossos Serviços</h2>
-      <p class="subtitle">Conheça o que oferecemos para você</p>
-      <div class="grid">
-        <article class="card">
-          <div class="icon">🐶</div>
-          <h3>Atendimento personalizado</h3>
-          <p>Plano de cuidado individual conforme cada necessidade.</p>
-        </article>
-        <article class="card">
-          <div class="icon">⭐</div>
-          <h3>Profissionais qualificados</h3>
-          <p>Equipe com formação especializada e experiência.</p>
-        </article>
-        <article class="card">
-          <div class="icon">🏆</div>
-          <h3>Resultados comprovados</h3>
-          <p>Clientes satisfeitos e depoimentos reais.</p>
-        </article>
-        <article class="card">
-          <div class="icon">📅</div>
-          <h3>Horários flexíveis</h3>
-          <p>Atendimento que se encaixa na sua rotina.</p>
-        </article>
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <span class="hero-pill">🐾 Adoção responsável e gratuita</span>
+        <h1>Adote um amigo, ganhe uma família inteira</h1>
+        <p class="lead">Cada bichinho da nossa galeria já foi resgatado, vacinado e está esperando um lar. Filtre por espécie e porte e encontre quem combina com sua rotina.</p>
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn primary">Ver catálogo</a>
+          <a href="mailto:contato@adoteumamigo.com.br" class="link-ghost">Quero adotar</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>150+</strong><span>adoções concluídas</span></div>
+          <div><strong>40</strong><span>ONGs parceiras</span></div>
+          <div><strong>100%</strong><span>gratuito</span></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-blob">
+          <img src="imagens/banner.jpg" alt="Cadela resgatada brincando no parque, à espera de um lar" />
+        </div>
+        <span class="hero-chip">🏡 +150 lares encontrados</span>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section id="sobre" style="background:#fff;">
+  <section id="catalogo">
     <div class="container">
-      <h2>Sobre nós</h2>
-      <p class="subtitle" style="max-width:720px; margin-left:auto; margin-right:auto;">
-        Somos especialistas em pet, dedicados a oferecer a melhor
-        experiência. Trabalhamos com ética, transparência e foco em resultados.
-      </p>
+      <h2>Catálogo</h2>
+      <p class="subtitle">Use os filtros para encontrar o ideal</p>
+      <div class="filtros" id="filtros"><button class="filtro-btn" data-filtro="Todos">Todos</button><button class="filtro-btn" data-filtro="Cão Grande">Cão Grande</button><button class="filtro-btn" data-filtro="Cão Pequeno">Cão Pequeno</button><button class="filtro-btn" data-filtro="Gato">Gato</button></div>
+      <div class="catalogo" id="lista"></div>
     </div>
   </section>
 
-  <!-- CONTATO com formulário -->
-  <section id="contato">
-    <div class="container">
-      <h2>Fale conosco</h2>
-      <p class="subtitle">Preencha e retornaremos em breve</p>
-      <form class="contact" id="formContato" novalidate>
-        <div>
-          <label for="nome">Nome completo</label>
-          <input type="text" id="nome" name="nome" required placeholder="Seu nome" />
-        </div>
-        <div>
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required placeholder="voce@email.com" />
-        </div>
-        <div>
-          <label for="telefone">Telefone / WhatsApp</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
-        </div>
-        <div>
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Como podemos ajudar?"></textarea>
-        </div>
-        <button type="submit" class="btn primary">Enviar mensagem</button>
-        <div class="mensagem-feedback" id="feedback"></div>
-      </form>
-    </div>
-  </section>
+  <footer><p>© <span id="ano"></span> Adote um Amigo - Adoção de Pets</p></footer>
 
-  <footer>
-    <p>© <span id="ano"></span> PetCharm - Banho & Tosa — Todos os direitos reservados.</p>
-    <p>Projeto educacional do curso de Web Design.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <!-- Dados do catálogo embarcados (em projetos reais viria de uma API) -->
+  <script>
+    window.ITENS = [
+      {"nome": "Thor", "categoria": "Cão Grande", "preco": "3 anos", "foto": "imagens/img1.png"},
+      {"nome": "Mimi", "categoria": "Gato", "preco": "2 anos", "foto": "imagens/img5.png"},
+      {"nome": "Bidu", "categoria": "Cão Pequeno", "preco": "1 ano", "foto": "imagens/img2.png"},
+      {"nome": "Luna", "categoria": "Gato", "preco": "5 anos", "foto": "imagens/img6.png"},
+      {"nome": "Rex", "categoria": "Cão Grande", "preco": "4 anos", "foto": "imagens/img4.png"},
+      {"nome": "Pipoca", "categoria": "Cão Pequeno", "preco": "6 meses", "foto": "imagens/img3.png"},
+      {"nome": "bela", "categoria": "Filhote", "preco": "5 meses", "foto": "imagens/img7.png"},
+      {"nome": "Luna", "categoria": "Cão Pequeno", "preco": "2ano", "foto": "imagens/img8.png"},
+      {"nome": "Dama", "categoria": "Cão Grande", "preco": "1anos", "foto": "imagens/img9.png"},
+      {"nome": "Moranguinho", "categoria": "Gato", "preco": "3 anos", "foto": "imagens/img10.png"},
+    ];
+    window.LABEL_PRECO = "Idade:";
+</script>
+  <script src="js/script.js"></script>
 </body>
 </html>

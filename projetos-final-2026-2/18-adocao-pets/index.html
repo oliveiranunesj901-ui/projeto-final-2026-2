@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adote um Amigo - Adoção de Pets</title>
+  <title> Maglu Pet Center - Adoção de Pets</title>
   <meta name="description" content="Galeria de animais com filtro de espécie/porte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="estilo/styles.css" />
   <style>
     .filtros { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:30px; }
@@ -28,7 +31,7 @@
 <body>
   <header class="site-header">
     <div class="nav">
-      <div class="logo">Adote um Amigo - Adoção de Pets</div>
+      <div class="logo"> Maglu Pet Center - Adoção de Pets</div>
       <button class="menu-toggle" aria-label="Menu">☰</button>
       <ul id="menu">
         <li><a href="#inicio">Início</a></li>
@@ -39,9 +42,29 @@
   </header>
 
   <section class="hero" id="inicio">
-    <h1>Adote um Amigo - Adoção de Pets</h1>
-    <p>Galeria de animais com filtro de espécie/porte.</p>
-    <a href="#catalogo" class="btn">Explorar</a>
+    <div class="hero-banner">
+      <img src="imagens/banner.png" alt="Avô, neta, cachorro e gato se abraçando sorrindo — adoção de pets" />
+    </div>
+    <div class="hero-content container">
+      <span class="hero-pill">🐾 Adoção responsável e gratuita</span>
+      <h1>Encontre seu novo melhor amigo: Um lar pode mudar tudo</h1>
+      <p class="lead">Por trás de cada olhar existe uma história, e por trás de cada história existe um bichinho esperando por uma segunda chance.
+
+Todos os pets da nossa galeria foram resgatados, cuidados e vacinados e agora só precisam de uma coisa: um lar para chamar de seu.
+
+Filtre por espécie e porte, encontre aquele olhar que combina com você e dê a ele a oportunidade de conhecer o verdadeiro significado de ter uma família.
+
+Adote. Ame. Transforme uma vida.</p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn primary">Ver catálogo</a>
+        <a href="mailto:contato@adoteumamigo.com.br" class="link-ghost">Quero adotar</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>150+</strong><span>adoções concluídas</span></div>
+        <div><strong>40</strong><span>ONGs parceiras</span></div>
+        <div><strong>100%</strong><span>gratuito</span></div>
+      </div>
+    </div>
   </section>
 
   <section id="catalogo">
