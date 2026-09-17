@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="pt-BR">
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Quiz de Adoção | MAGLU Pet Center</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="estilo/styles.css"></head><body>
+<header class="site-header">
+    <div class="nav">
+        <div class="logo">🐾 MAGLU Pet Center</div>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <ul id="menu"><li><a href="index.html">Início</a>
+        </li><li><a href="quiz.html">Quiz de Adoção</a></li><li><a href="contato.html">Quero adotar</a></li></ul></div></header>
+<main><section class="page-hero"><div class="container"><h1>Qual pet combina com você? 🐶🐱🐭</h1><p>Responda ao quiz e receba uma sugestão baseada no seu espaço, tempo disponível e rotina.</p></div></section><section class="quiz-wrap"><div class="container"><div class="quiz-card"><div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+<div class="question ativa"><h2>1. Onde você mora?</h2><div class="opcoes"><button class="opcao" data-value="apartamento">🏢 Apartamento</button><button class="opcao" data-value="casa">🏠 Casa com pouco espaço externo</button><button class="opcao" data-value="quintal">🌳 Casa com quintal</button></div></div>
+<div class="question"><h2>2. Quanto tempo você tem para cuidar e interagir com o pet?</h2><div class="opcoes"><button class="opcao" data-value="pouco">⏰ Pouco tempo durante o dia</button><button class="opcao" data-value="medio">🙂 Algumas horas por dia</button><button class="opcao" data-value="muito">❤️ Bastante tempo disponível</button></div></div>
+<div class="question"><h2>3. Qual nível de energia você procura?</h2><div class="opcoes"><button class="opcao" data-value="calmo">🌙 Mais tranquilo</button><button class="opcao" data-value="medio">⚡ Equilibrado</button><button class="opcao" data-value="ativo">🏃 Bem ativo e brincalhão</button></div></div>
+<div class="question"><h2>4. Você tem disponibilidade para passeios frequentes?</h2><div class="opcoes"><button class="opcao" data-value="nao">Não tenho muita disponibilidade</button><button class="opcao" data-value="sim">Sim, consigo passear regularmente</button></div></div>
+<div class="question"><h2>5. O que você mais procura em um companheiro?</h2><div class="opcoes"><button class="opcao" data-value="companhia">🐾 Companhia e carinho</button><button class="opcao" data-value="brincadeira">🎾 Brincadeiras e interação</button><button class="opcao" data-value="tranquilidade">🛋️ Um companheiro mais tranquilo</button></div></div>
+<div class="quiz-actions"><button class="btn secondary" id="voltar" type="button" style="display:none">Voltar</button><button class="btn primary" id="proximo" type="button" disabled>Próxima</button></div>
+<div class="resultado-quiz" id="resultado"><h2>Seu perfil de adoção 💚</h2><p id="mensagemResultado"></p><div class="recomendacoes" id="recomendacoes"></div><p class="dica">A indicação é apenas um ponto de partida. Cada animal tem sua própria personalidade e necessidades. Converse com a equipe antes da adoção.</p><br><a class="btn primary" href="contato.html">Preencher meus dados</a> <a class="btn secondary" href="index.html">Voltar para a home</a></div>
+</div></div></section></main><footer><p>© <span id="ano"></span> MAGLU Pet Center - Adoção de Pets</p></footer><script src="quiz.js"></script></body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Quero Adotar | MAGLU Pet Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="nav">
+            <div class="logo">🐾 MAGLU Pet Center</div>
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <ul id="menu">
+                <li><a href="index.html">Início</a>
+                </li>
+                <li><a href="quiz.html">Quiz de Adoção</a></li>
+                <li><a href="index.html#catalogo">Catálogo</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Quero adotar! 💚</h1>
+                <p>Preencha seus dados para que nossa equipe possa entrar em contato e conversar com você sobre a
+                    adoção.</p>
+            </div>
+        </section>
+        <section class="contact-wrap">
+            <div class="container">
+                <div class="contact-card">
+                    <form id="formContato" novalidate>
+                        <div class="form-group">
+                            <label for="nome">Nome completo</label>
+                            <input id="nome" type="text" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="form-group"><label for="celular">Número de celular</label>
+                            <input id="celular" type="tel" inputmode="numeric" placeholder="(11) 99999-9999"
+                                maxlength="15" required>
+                        </div>
+                        <div class="form-group"><label for="cep">CEP</label><input id="cep" type="text"
+                                inputmode="numeric" placeholder="00000-000" maxlength="9" required></div>
+                        <div class="form-group"><label for="email">E-mail</label><input id="email" type="email"
+                                placeholder="seuemail@exemplo.com" required></div>
+                        <button class="btn primary" type="submit">Enviar interesse em adoção</button>
+                        <p class="privacidade">Nesta versão escolar, os dados são armazenados apenas neste navegador
+                            para demonstrar o funcionamento. Em um site real, conecte o formulário a um backend
+                            autorizado.</p>
+                        <div class="erro-form" id="erroForm"></div>
+                        <div class="sucesso" id="sucesso">Cadastro realizado na demonstração! A equipe poderá usar os
+                            dados preenchidos para entrar em contato.</div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© <span id="ano">
+
+        </span> MAGLU Pet Center - Adoção de Pets</p>
+    </footer>
+    <script src="js/contato.js">
+
+    </script>
+</body>
+
+</html>
